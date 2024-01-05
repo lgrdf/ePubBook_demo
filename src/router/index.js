@@ -1,14 +1,13 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import E_book from "@/E-Book";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: HomeView,
+    redirect: "/ebook",
   },
   {
     path: "/about",
@@ -18,6 +17,11 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+  },
+  {
+    path: "/ebook",
+    name: "ebook",
+    component: E_book,
   },
 ];
 
